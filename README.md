@@ -12,4 +12,14 @@ https://www.bootcss.com/
 
 github授权登录
 https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
-## 工具
+## mysql数据库脚本
+```sql
+CREATE TABLE USER(
+    ID int AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    ACCOUNT_ID VARCHAR(100),
+    NAME VARCHAR(50),
+    TOKEN VARCHAR(36),
+    GMT_CREATE BIGINT,
+    GMT_MODIFIED BIGINT
+);
+```
