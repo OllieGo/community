@@ -2,6 +2,7 @@ package com.olliego.community.controller;
 
 import com.olliego.community.dto.QuestionDTO;
 import com.olliego.community.mapper.UserMapper;
+import com.olliego.community.model.Question;
 import com.olliego.community.model.User;
 import com.olliego.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -13,5 +13,9 @@ public class GithubUser {
     private String name;
     private Long id;
     private String bio;
+<<<<<<< HEAD
     private String avatarUrl;
+=======
+    private String avatar_url;
+>>>>>>> origin/master
 }
