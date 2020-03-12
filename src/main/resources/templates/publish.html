@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>-->
             </button>
-            <a class="navbar-brand" href="#">OllieGo社区</a>
+            <a class="navbar-brand" href="/">OllieGo社区</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,22 +62,29 @@
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">标题</label>
-                    <input type="text" class="form-control" th:value="${title}" id="title" name="title" placeholder="标题__">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           placeholder="标题__">
                 </div>
                 <div class="form-group">
                     <label for="description">补充</label>
-                    <textarea name="description" id="description" th:text="${description}" class="form-control" cols="30"
+                    <textarea name="description" id="description" th:text="${description}" class="form-control"
+                              cols="30"
                               rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="tag">添加标签:</label>
-                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="输入标签，以逗号分隔">
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                           placeholder="输入标签，以逗号分隔">
                 </div>
 
                 <div class="container-fluid main">
                     <div class="row">
-                        <div class="alert alert-danger col-lg-12 col=md-12 col-sm-12 col-xs-12"
-                             th:if="${error!=null}" th:text="${error}"></div>
+                        <div class="col-lg-9 col=md-12 col-sm-12 col-xs-12">
+                            <div class="alert alert-danger col-lg-12 col=md-12 col-sm-12 col-xs-12"
+                                 th:if="${error!=null}"
+                                 th:text="${error}">
+                            </div>
+                        </div>
                         <div class="col-lg-12 col=md-12 col-sm-12 col-xs-12">
                             <button type="submit" class="btn btn-success btn-publish">
                                 发布
@@ -85,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-
             </form>
         </div>
         <div class="col-lg-3 col=md-12 col-sm-12 col-xs-12">
