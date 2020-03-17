@@ -2,7 +2,6 @@ package com.olliego.community.controller;
 
 import com.olliego.community.dto.AccessTokenDTO;
 import com.olliego.community.dto.GithubUser;
-import com.olliego.community.mapper.UserMapper;
 import com.olliego.community.model.User;
 import com.olliego.community.provider.GithubProvider;
 import com.olliego.community.service.UserService;

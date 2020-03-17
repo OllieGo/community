@@ -1,28 +1,28 @@
 package com.olliego.community.mapper;
 
 import com.olliego.community.model.User;
-import org.apache.ibatis.annotations.*;
+import com.olliego.community.model.UserExample;
+import java.util.List;
 
-/**
- * @Classname UserMapper
- * @Description 持久层
- * @Date 2020/3/9 15:11
- * @Created by OllieGo
- */
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 @Mapper
 public interface UserMapper {
-    @Insert("insert into user (name,account_id,token,gmt_create,gmt_modified,avatar_url) values (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified},#{avatarUrl})")
-    void insert(User user);
 
-    @Select("select * from user where token = #{token}")
-    User findByToken(@Param("token") String token);
+    long countByExample(UserExample example);
 
-    @Select("select * from user where id = #{id}")
-    User findById(@Param("id") Integer id);
+    int deleteByExample(UserExample example);
 
-    @Select("select * from user where account_id = #{accountId}")
-    User findByAccountId(@Param("accountId") String accountId);
+    int insert(User record);
 
-    @Update("update user set name = #{name}, token = #{token}, gmt_modified = #{gmtModified}, avatar_url = #{avatarUrl} where id = #{id}")
-    void update(User user);
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    User selectByPrimaryKey(Long id);
 }
