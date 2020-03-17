@@ -1,7 +1,6 @@
 package com.olliego.community.controller;
 
 import com.olliego.community.dto.QuestionDTO;
-import com.olliego.community.mapper.QuestionMapper;
 import com.olliego.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

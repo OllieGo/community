@@ -7,6 +7,7 @@
 
     <context id="mysqlTables" targetRuntime="MyBatis3">
 
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
         <!-- 是否生成注释 -->
         <commentGenerator>
             <property name="suppressAllComments" value="true" />
@@ -17,6 +18,7 @@
                         password="1234">
             <!--设置为 true 可以获取 tables 信息, 解决生成文件缺少 xxxByPrimaryKey 的问题 -->
             <property name="useInformationSchema" value="true"/>
+            <property name ="nullCatalogMeansCurrent" value = "true"/>
         </jdbcConnection>
 
         <!--指定生成的类型为java类型，避免数据库中number等类型字段 -->
@@ -41,8 +43,8 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="user" domainObjectName="User"/>
-        <!--<table tableName="question" domainObjectName="Question"></table>-->
+        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="question" domainObjectName="Question"></table>
         <!--<table tableName="comment" domainObjectName="Comment"></table>
         <table tableName="notification" domainObjectName="Notification"></table>
         <table tableName="nav" domainObjectName="Nav"></table>
