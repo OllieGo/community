@@ -2,6 +2,7 @@ package com.olliego.community.service;
 
 import com.olliego.community.dto.PaginationDTO;
 import com.olliego.community.dto.QuestionDTO;
+import com.olliego.community.exception.CustomizeErrorCode;
 import com.olliego.community.exception.CustomizeException;
 import com.olliego.community.mapper.QuestionMapper;
 import com.olliego.community.mapper.UserMapper;
@@ -143,7 +144,20 @@ public class QuestionService {
             QuestionExample example = new QuestionExample();
             example.createCriteria()
                     .andIdEqualTo(question.getId());
-            questionMapper.updateByPrimaryKeySelective(updateQuestion);
+            int update = questionMapper.updateByExampleSelective(updateQuestion, example);
+            if(update != 1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
         }
+    }
+
+    public void incView(Integer id) {
+        Question question = questionMapper.selectByPrimaryKey(id);
+        Question updateQuestion = new Question();
+        updateQuestion.setViewCount(question.getViewCount() + 1);
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria()
+                .andIdEqualTo(id);
+        questionMapper.updateByExampleSelective(updateQuestion, questionExample);
     }
 }
