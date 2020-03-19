@@ -18,6 +18,7 @@
                         password="1234">
             <!--设置为 true 可以获取 tables 信息, 解决生成文件缺少 xxxByPrimaryKey 的问题 -->
             <property name="useInformationSchema" value="true"/>
+            <!--忽略mysql的Schema属性-->
             <property name ="nullCatalogMeansCurrent" value = "true"/>
         </jdbcConnection>
 
@@ -45,8 +46,8 @@
 
         <table tableName="user" domainObjectName="User"></table>
         <table tableName="question" domainObjectName="Question"></table>
-        <!--<table tableName="comment" domainObjectName="Comment"></table>
-        <table tableName="notification" domainObjectName="Notification"></table>
+        <table tableName="comment" domainObjectName="Comment"></table>
+        <!--<table tableName="notification" domainObjectName="Notification"></table>
         <table tableName="nav" domainObjectName="Nav"></table>
         <table tableName="ad" domainObjectName="Ad"></table>-->
     </context>

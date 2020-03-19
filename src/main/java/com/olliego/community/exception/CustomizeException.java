@@ -1,11 +1,11 @@
 package com.olliego.community.exception;
 
 public class CustomizeException extends RuntimeException {
+    private Integer code;
     private String message;
-    //private Integer code;
 
     public CustomizeException(ICustomizeErrorCode errorCode) {
-        //this.code = errorCode.getCode();
+        this.code = errorCode.getCode();
         this.message = errorCode.getMessage();
     }
 
@@ -18,7 +18,7 @@ public class CustomizeException extends RuntimeException {
         return message;
     }
 
-    /*public Integer getCode() {
+    public Integer getCode() {
         return code;
-    }*/
+    }
 }
