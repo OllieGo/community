@@ -13,15 +13,16 @@
     <result column="tag" jdbcType="VARCHAR" property="tag" />
   </resultMap>
 
-  <!--<update id="incView" parameterType="com.olliego.community.model.Question">
-    update question
-    set view_count = view_count + #{record.viewCount,jdbcType=INTEGER}
-    where id = #{record.id}
-  </update>-->
-
   <update id="incView" parameterType="com.olliego.community.model.Question">
     update question
     set view_count = view_count + #{viewCount,jdbcType=INTEGER}
+    where id = #{id}
+  </update>
+
+  <update id="incCommentCount" parameterType="com.olliego.community.model.Question">
+    update QUESTION
+    set
+      COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
 </mapper>

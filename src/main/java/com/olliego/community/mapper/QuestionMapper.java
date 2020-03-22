@@ -3,18 +3,15 @@ package com.olliego.community.mapper;
 import com.olliego.community.model.Question;
 import com.olliego.community.model.QuestionExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
-@Mapper
 public interface QuestionMapper {
     long countByExample(QuestionExample example);
 
     int deleteByExample(QuestionExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(Question record);
 
@@ -28,7 +25,7 @@ public interface QuestionMapper {
 
     List<Question> selectByExample(QuestionExample example);
 
-    Question selectByPrimaryKey(Integer id);
+    Question selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") Question record, @Param("example") QuestionExample example);
 

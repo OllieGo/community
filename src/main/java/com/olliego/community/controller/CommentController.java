@@ -1,9 +1,12 @@
 package com.olliego.community.controller;
 
 import com.olliego.community.dto.CommentDTO;
+import com.olliego.community.dto.ResultDTO;
+import com.olliego.community.exception.CustomizeErrorCode;
 import com.olliego.community.mapper.CommentMapper;
 import com.olliego.community.model.Comment;
 import com.olliego.community.model.User;
+import com.olliego.community.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,28 +20,30 @@ import java.util.Map;
 
 @Controller
 public class CommentController {
-
     @Autowired
-    private CommentMapper commentMapper;
+    private CommentService commentService;
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)
     public Object post(@RequestBody CommentDTO commentDTO,
                        HttpServletRequest request){
-
         User user = (User) request.getSession().getAttribute("user");
+        if(user == null){
+            return ResultDTO.errorOf(CustomizeErrorCode.NO_LOGIN);
+        }
         Comment comment = new Comment();
         comment.setParentId(commentDTO.getParentId());
         comment.setContent(commentDTO.getContent());
         comment.setType(commentDTO.getType());
         comment.setGmtModified(System.currentTimeMillis());
         comment.setGmtCreate(System.currentTimeMillis());
-        comment.setCommentator(1);
+        comment.setCommentator(user.getId());
         comment.setLikeCount(0L);
-        commentMapper.insert(comment);
-        Map<Object, Object> objectHashMap = new HashMap<>();
-        objectHashMap.put("message", "成功");
-        return objectHashMap;
+        commentService.insert(comment);
+        /*Map<Object, Object> objectHashMap = new HashMap<>();
+        objectHashMap.put("message", "成功");*/
+        //return objectHashMap;
+        return ResultDTO.okOf();
     }
 
 }

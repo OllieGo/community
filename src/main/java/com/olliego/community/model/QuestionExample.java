@@ -114,52 +114,52 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Integer value) {
+        public Criteria andIdEqualTo(Long value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Integer value) {
+        public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Integer value) {
+        public Criteria andIdGreaterThan(Long value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Integer value) {
+        public Criteria andIdLessThan(Long value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Integer value) {
+        public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Integer> values) {
+        public Criteria andIdIn(List<Long> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Integer> values) {
+        public Criteria andIdNotIn(List<Long> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Integer value1, Integer value2) {
+        public Criteria andIdBetween(Long value1, Long value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andIdNotBetween(Long value1, Long value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
@@ -364,52 +364,52 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreatorEqualTo(Integer value) {
+        public Criteria andCreatorEqualTo(Long value) {
             addCriterion("creator =", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorNotEqualTo(Integer value) {
+        public Criteria andCreatorNotEqualTo(Long value) {
             addCriterion("creator <>", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorGreaterThan(Integer value) {
+        public Criteria andCreatorGreaterThan(Long value) {
             addCriterion("creator >", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCreatorGreaterThanOrEqualTo(Long value) {
             addCriterion("creator >=", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorLessThan(Integer value) {
+        public Criteria andCreatorLessThan(Long value) {
             addCriterion("creator <", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorLessThanOrEqualTo(Integer value) {
+        public Criteria andCreatorLessThanOrEqualTo(Long value) {
             addCriterion("creator <=", value, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorIn(List<Integer> values) {
+        public Criteria andCreatorIn(List<Long> values) {
             addCriterion("creator in", values, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorNotIn(List<Integer> values) {
+        public Criteria andCreatorNotIn(List<Long> values) {
             addCriterion("creator not in", values, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorBetween(Integer value1, Integer value2) {
+        public Criteria andCreatorBetween(Long value1, Long value2) {
             addCriterion("creator between", value1, value2, "creator");
             return (Criteria) this;
         }
 
-        public Criteria andCreatorNotBetween(Integer value1, Integer value2) {
+        public Criteria andCreatorNotBetween(Long value1, Long value2) {
             addCriterion("creator not between", value1, value2, "creator");
             return (Criteria) this;
         }
@@ -424,52 +424,52 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountEqualTo(Integer value) {
+        public Criteria andCommentCountEqualTo(Long value) {
             addCriterion("comment_count =", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountNotEqualTo(Integer value) {
+        public Criteria andCommentCountNotEqualTo(Long value) {
             addCriterion("comment_count <>", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountGreaterThan(Integer value) {
+        public Criteria andCommentCountGreaterThan(Long value) {
             addCriterion("comment_count >", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCommentCountGreaterThanOrEqualTo(Long value) {
             addCriterion("comment_count >=", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountLessThan(Integer value) {
+        public Criteria andCommentCountLessThan(Long value) {
             addCriterion("comment_count <", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountLessThanOrEqualTo(Integer value) {
+        public Criteria andCommentCountLessThanOrEqualTo(Long value) {
             addCriterion("comment_count <=", value, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountIn(List<Integer> values) {
+        public Criteria andCommentCountIn(List<Long> values) {
             addCriterion("comment_count in", values, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountNotIn(List<Integer> values) {
+        public Criteria andCommentCountNotIn(List<Long> values) {
             addCriterion("comment_count not in", values, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountBetween(Integer value1, Integer value2) {
+        public Criteria andCommentCountBetween(Long value1, Long value2) {
             addCriterion("comment_count between", value1, value2, "commentCount");
             return (Criteria) this;
         }
 
-        public Criteria andCommentCountNotBetween(Integer value1, Integer value2) {
+        public Criteria andCommentCountNotBetween(Long value1, Long value2) {
             addCriterion("comment_count not between", value1, value2, "commentCount");
             return (Criteria) this;
         }
@@ -484,52 +484,52 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andViewCountEqualTo(Integer value) {
+        public Criteria andViewCountEqualTo(Long value) {
             addCriterion("view_count =", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountNotEqualTo(Integer value) {
+        public Criteria andViewCountNotEqualTo(Long value) {
             addCriterion("view_count <>", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountGreaterThan(Integer value) {
+        public Criteria andViewCountGreaterThan(Long value) {
             addCriterion("view_count >", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountGreaterThanOrEqualTo(Integer value) {
+        public Criteria andViewCountGreaterThanOrEqualTo(Long value) {
             addCriterion("view_count >=", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountLessThan(Integer value) {
+        public Criteria andViewCountLessThan(Long value) {
             addCriterion("view_count <", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountLessThanOrEqualTo(Integer value) {
+        public Criteria andViewCountLessThanOrEqualTo(Long value) {
             addCriterion("view_count <=", value, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountIn(List<Integer> values) {
+        public Criteria andViewCountIn(List<Long> values) {
             addCriterion("view_count in", values, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountNotIn(List<Integer> values) {
+        public Criteria andViewCountNotIn(List<Long> values) {
             addCriterion("view_count not in", values, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountBetween(Integer value1, Integer value2) {
+        public Criteria andViewCountBetween(Long value1, Long value2) {
             addCriterion("view_count between", value1, value2, "viewCount");
             return (Criteria) this;
         }
 
-        public Criteria andViewCountNotBetween(Integer value1, Integer value2) {
+        public Criteria andViewCountNotBetween(Long value1, Long value2) {
             addCriterion("view_count not between", value1, value2, "viewCount");
             return (Criteria) this;
         }
@@ -544,52 +544,52 @@ public class QuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountEqualTo(Integer value) {
+        public Criteria andLikeCountEqualTo(Long value) {
             addCriterion("like_count =", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountNotEqualTo(Integer value) {
+        public Criteria andLikeCountNotEqualTo(Long value) {
             addCriterion("like_count <>", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountGreaterThan(Integer value) {
+        public Criteria andLikeCountGreaterThan(Long value) {
             addCriterion("like_count >", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLikeCountGreaterThanOrEqualTo(Long value) {
             addCriterion("like_count >=", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountLessThan(Integer value) {
+        public Criteria andLikeCountLessThan(Long value) {
             addCriterion("like_count <", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountLessThanOrEqualTo(Integer value) {
+        public Criteria andLikeCountLessThanOrEqualTo(Long value) {
             addCriterion("like_count <=", value, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountIn(List<Integer> values) {
+        public Criteria andLikeCountIn(List<Long> values) {
             addCriterion("like_count in", values, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountNotIn(List<Integer> values) {
+        public Criteria andLikeCountNotIn(List<Long> values) {
             addCriterion("like_count not in", values, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountBetween(Integer value1, Integer value2) {
+        public Criteria andLikeCountBetween(Long value1, Long value2) {
             addCriterion("like_count between", value1, value2, "likeCount");
             return (Criteria) this;
         }
 
-        public Criteria andLikeCountNotBetween(Integer value1, Integer value2) {
+        public Criteria andLikeCountNotBetween(Long value1, Long value2) {
             addCriterion("like_count not between", value1, value2, "likeCount");
             return (Criteria) this;
         }
