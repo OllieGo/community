@@ -1,11 +1,11 @@
 package com.olliego.community.interceptor;
 
 //import com.olliego.community.enums.AdPosEnum;
-import com.olliego.community.mapper.UserMapper;
-import com.olliego.community.model.User;
 //import com.olliego.community.model.UserExample;
 //import com.olliego.community.service.AdService;
 //import com.olliego.community.service.NotificationService;
+import com.olliego.community.mapper.UserMapper;
+import com.olliego.community.model.User;
 import com.olliego.community.model.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

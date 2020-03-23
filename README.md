@@ -13,5 +13,7 @@
 [Thymeleaf模板引擎](https://www.thymeleaf.org/index.html)
 
 [Mybatis](https://mybatis.org/mybatis-3/zh/index.html)
+
+[jQuery](https://jquery.com/)
 ## 工具
 [Lombok官网](https://projectlombok.org/)

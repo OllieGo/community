@@ -3,7 +3,6 @@ package com.olliego.community.controller;
 import com.olliego.community.dto.CommentDTO;
 import com.olliego.community.dto.ResultDTO;
 import com.olliego.community.exception.CustomizeErrorCode;
-import com.olliego.community.mapper.CommentMapper;
 import com.olliego.community.model.Comment;
 import com.olliego.community.model.User;
 import com.olliego.community.service.CommentService;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class CommentController {
