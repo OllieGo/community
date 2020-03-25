@@ -10,12 +10,12 @@
         <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified"/>
         <result column="LIKE_COUNT" jdbcType="BIGINT" property="likeCount"/>
         <result column="CONTENT" jdbcType="VARCHAR" property="content"/>
-        <result column="COMMENT_COUNT" jdbcType="INTEGER" property="commentCount"/>
+        <result column="COMMENT_COUNT" jdbcType="BIGINT" property="commentCount"/>
     </resultMap>
     <update id="incCommentCount" parameterType="com.olliego.community.model.Comment">
     update COMMENT
     set
-    COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
+    COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=BIGINT}
     where id = #{id}
     </update>
 </mapper>

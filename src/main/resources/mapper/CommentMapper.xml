@@ -10,6 +10,7 @@
     <result column="gmt_modified" jdbcType="BIGINT" property="gmtModified" />
     <result column="like_count" jdbcType="BIGINT" property="likeCount" />
     <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="comment_count" jdbcType="BIGINT" property="commentCount" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,7 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content
+    id, parent_id, type, commentator, gmt_create, gmt_modified, like_count, content, 
+    comment_count
   </sql>
   <select id="selectByExample" parameterType="com.olliego.community.model.CommentExample" resultMap="BaseResultMap">
     select
@@ -105,10 +107,12 @@
   <insert id="insert" parameterType="com.olliego.community.model.Comment">
     insert into comment (id, parent_id, type, 
       commentator, gmt_create, gmt_modified, 
-      like_count, content)
+      like_count, content, comment_count
+      )
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{type,jdbcType=INTEGER}, 
       #{commentator,jdbcType=BIGINT}, #{gmtCreate,jdbcType=BIGINT}, #{gmtModified,jdbcType=BIGINT}, 
-      #{likeCount,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR})
+      #{likeCount,jdbcType=BIGINT}, #{content,jdbcType=VARCHAR}, #{commentCount,jdbcType=BIGINT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.olliego.community.model.Comment">
     insert into comment
@@ -137,6 +141,9 @@
       <if test="content != null">
         content,
       </if>
+      <if test="commentCount != null">
+        comment_count,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -162,6 +169,9 @@
       </if>
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="commentCount != null">
+        #{commentCount,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -198,6 +208,9 @@
       <if test="record.content != null">
         content = #{record.content,jdbcType=VARCHAR},
       </if>
+      <if test="record.commentCount != null">
+        comment_count = #{record.commentCount,jdbcType=BIGINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -212,7 +225,8 @@
       gmt_create = #{record.gmtCreate,jdbcType=BIGINT},
       gmt_modified = #{record.gmtModified,jdbcType=BIGINT},
       like_count = #{record.likeCount,jdbcType=BIGINT},
-      content = #{record.content,jdbcType=VARCHAR}
+      content = #{record.content,jdbcType=VARCHAR},
+      comment_count = #{record.commentCount,jdbcType=BIGINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -241,6 +255,9 @@
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
       </if>
+      <if test="commentCount != null">
+        comment_count = #{commentCount,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -252,7 +269,8 @@
       gmt_create = #{gmtCreate,jdbcType=BIGINT},
       gmt_modified = #{gmtModified,jdbcType=BIGINT},
       like_count = #{likeCount,jdbcType=BIGINT},
-      content = #{content,jdbcType=VARCHAR}
+      content = #{content,jdbcType=VARCHAR},
+      comment_count = #{commentCount,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <select id="selectByExampleWithRowbounds" parameterType="com.olliego.community.model.CommentExample" resultMap="BaseResultMap">

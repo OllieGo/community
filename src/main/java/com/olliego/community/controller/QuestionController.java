@@ -3,6 +3,7 @@ package com.olliego.community.controller;
 import com.olliego.community.dto.CommentCreateDTO;
 import com.olliego.community.dto.CommentDTO;
 import com.olliego.community.dto.QuestionDTO;
+import com.olliego.community.enums.CommentTypeEnum;
 import com.olliego.community.service.CommentService;
 import com.olliego.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,8 @@ public class QuestionController {
                            Model model){
         QuestionDTO questionDTO = questionService.getById(id);
 
-        List<CommentDTO> comments = commentService.listByTargetId(id);
+        List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
+
 
         //增加阅读数
         questionService.incView(id);
