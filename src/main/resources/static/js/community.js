@@ -121,6 +121,7 @@ function showSelectTag() {
 function selectTag(e) {
     var value = e.getAttribute("data-tag");
     var previous = $("#tag").val();
+    //如果value不存在则添加tag
     if (previous.indexOf(value) == -1) {
         if (previous) {
             $("#tag").val(previous + ',' + value);
