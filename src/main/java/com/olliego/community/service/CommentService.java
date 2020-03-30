@@ -2,6 +2,8 @@ package com.olliego.community.service;
 
 import com.olliego.community.dto.CommentDTO;
 import com.olliego.community.enums.CommentTypeEnum;
+import com.olliego.community.enums.NotificationStatusEnum;
+import com.olliego.community.enums.NotificationTypeEnum;
 import com.olliego.community.exception.CustomizeErrorCode;
 import com.olliego.community.exception.CustomizeException;
 import com.olliego.community.mapper.*;
@@ -35,6 +37,9 @@ public class CommentService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private NotificationMapper notificationMapper;
+
     @Transactional
     public void insert(Comment comment) {
         if (comment.getParentId() == null || comment.getParentId() == 0) {
@@ -58,6 +63,7 @@ public class CommentService {
             commentExtMapper.incCommentCount(parentComment);
 
             // 创建通知
+            createNotify(comment, dbComment.getCommentator());
             //createNotify(comment, dbComment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT, question.getId());
         } else {
             // 回复问题
@@ -71,8 +77,20 @@ public class CommentService {
             questionExtMapper.incCommentCount(question);
 
             // 创建通知
+            createNotify(comment, question.getCreator());
             //createNotify(comment, question.getCreator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_QUESTION, question.getId());
         }
+    }
+
+    private void createNotify(Comment comment, Long receiver) {
+        Notification notification = new Notification();
+        notification.setGmtCreate(System.currentTimeMillis());
+        notification.setType(NotificationTypeEnum.REPLY_COMMENT.getType());
+        notification.setOuterid(comment.getParentId());
+        notification.setNotifier(comment.getCommentator());
+        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+        notification.setReceiver(receiver);
+        notificationMapper.insert(notification);
     }
 
     public List<CommentDTO> listByTargetId(Long id, CommentTypeEnum type) {

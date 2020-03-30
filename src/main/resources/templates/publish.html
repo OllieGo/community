@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-lg-9 col=md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 发起</h2>
+            <hr>
 
             <form action="/publish" method="post">
                 <input type="hidden" name="id" th:value="${id}">
@@ -26,7 +27,8 @@
                 </div>
                 <div class="form-group">
                     <label for="description">补充</label>
-                    <textarea name="description" id="description" th:text="${description}" class="form-control"
+                    <textarea name="description" id="description" th:text="${description}"
+                              class="form-control"
                               cols="30"
                               rows="10"></textarea>
                 </div>
